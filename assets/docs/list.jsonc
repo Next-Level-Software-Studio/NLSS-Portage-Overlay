@@ -26,5 +26,8 @@ Neste ficheiro devem estar listadas as informações sobre cada pacote deste rep
     "dev-python/api-get": {
         "repo type": "git",
         "repo": "Next-Level-Software-Studio/api-get"
+    },
+    "dev-python/py-josnwc": {
+
     }
 }
