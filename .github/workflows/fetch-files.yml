@@ -36,13 +36,13 @@ jobs:
           echo "Copied files:" >> "$COMMIT_MSG_FILE"
           
           # Valida se o arquivo existe localmente na raiz
-          if [ ! -f "list.jsonc" ]; then
-            echo "Error: list.jsonc not found in the repository root."
+          if [ ! -f "assets/docs/list.jsonc" ]; then
+            echo "Error: assets/docs/list.jsonc not found in the repository root."
             exit 1
           fi
 
           # Remove comentários JSONC do arquivo local (Limpa blocos /* ... */ e linhas //)
-          JSON_DATA=$(perl -0777 -pe 's/\/\*[\s\S]*?\*\///g; s/^[[:blank:]]*\/\/.*$//gm' list.jsonc)
+          JSON_DATA=$(perl -0777 -pe 's/\/\*[\s\S]*?\*\///g; s/^[[:blank:]]*\/\/.*$//gm' assets/docs/list.jsonc)
 
           # Valida se o JSON final é válido antes de prosseguir
           if ! echo "$JSON_DATA" | jq . >/dev/null 2>&1; then
