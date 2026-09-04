@@ -103,8 +103,8 @@ src_install() {
         newconfd "${FILESDIR}/forgejo.confd-r1" forgejo
         newinitd "${FILESDIR}/forgejo.initd-r3" forgejo
         newtmpfiles - forgejo.conf <<-EOF
-                d /run/forgejo 0755 git git
-        EOF
+		d /run/forgejo 0755 git git
+	EOF
         systemd_newunit "${FILESDIR}"/forgejo.service-r3 forgejo.service
 
         insinto /etc/forgejo
